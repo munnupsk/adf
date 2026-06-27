@@ -1,0 +1,15 @@
+{
+	"name": "PK-DF-05",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "026a86e9-f1e6-4ccd-9f14-8eb3e6e356ad",
+		"tenantId": "2ac78a4f-9d0d-4d70-b4a2-c4c870578d24"
+	}
+}

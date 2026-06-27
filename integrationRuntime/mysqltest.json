@@ -1,0 +1,9 @@
+{
+	"name": "mysqltest",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"selfContainedInteractiveAuthoringEnabled": false
+		}
+	}
+}

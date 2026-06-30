@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "Parquet2",
+						"referenceName": "dataflow_dataset",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"

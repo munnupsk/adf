@@ -1,5 +1,5 @@
 {
-	"name": "Parquet2",
+	"name": "dataflow_dataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "dataflowSink",

@@ -1,0 +1,10 @@
+{
+	"name": "adls_fetch",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://pksa05.dfs.core.windows.net/"
+		}
+	}
+}

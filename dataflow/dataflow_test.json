@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "dataflow_test",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -12,8 +12,20 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
-			"transformations": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "rank1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          cid as integer,",
@@ -29,7 +41,28 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     format: 'parquet') ~> source1"
+				"     format: 'parquet') ~> source1",
+				"source1 rank(asc(cid, true),",
+				"     output(user_id as long)) ~> rank1",
+				"rank1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          cid as integer,",
+				"          description as string,",
+				"          email as string,",
+				"          image as string,",
+				"          name as string,",
+				"          phone as string,",
+				"          second_name as string,",
+				"          work as string,",
+				"          user_id as integer",
+				"     ),",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}

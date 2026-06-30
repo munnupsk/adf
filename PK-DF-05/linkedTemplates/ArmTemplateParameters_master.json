@@ -29,6 +29,12 @@
 		"MySql1_properties_typeProperties_username": {
 			"value": "root"
 		},
+		"adls_fetch_properties_typeProperties_url": {
+			"value": "https://pksa05.dfs.core.windows.net/"
+		},
+		"dataflowSink_properties_typeProperties_url": {
+			"value": "https://pksa05.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"value": ""
 		},

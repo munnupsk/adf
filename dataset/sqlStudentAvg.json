@@ -1,0 +1,23 @@
+{
+	"name": "sqlStudentAvg",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "age_avg",
+				"type": "decimal",
+				"precision": 2,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "studentAgeAvg"
+		}
+	}
+}

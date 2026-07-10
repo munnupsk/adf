@@ -14,11 +14,29 @@
 		"AzureDatabricks3_accessToken": {
 			"value": ""
 		},
+		"AzureSqlDatabase_password": {
+			"value": ""
+		},
 		"MySql1_password": {
+			"value": ""
+		},
+		"sa_csv_accountKey": {
 			"value": ""
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://pksa05.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://pksa05.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "pk-test-sql-server.database.windows.net"
+		},
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "pk-db-test-demo"
+		},
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "prasanna"
 		},
 		"MySql1_properties_typeProperties_server": {
 			"value": "localhost"
@@ -33,6 +51,9 @@
 			"value": "https://pksa05.dfs.core.windows.net/"
 		},
 		"dataflowSink_properties_typeProperties_url": {
+			"value": "https://pksa05.dfs.core.windows.net/"
+		},
+		"sa_csv_properties_typeProperties_url": {
 			"value": "https://pksa05.dfs.core.windows.net/"
 		},
 		"containerUri": {

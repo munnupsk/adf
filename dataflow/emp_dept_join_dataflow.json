@@ -79,7 +79,7 @@
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
-				"     updateable:true,",
+				"     updateable:false,",
 				"     upsertable:true,",
 				"     keys:['Id','Name','Department_name'],",
 				"     format: 'table',",

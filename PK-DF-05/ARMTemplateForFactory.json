@@ -1330,6 +1330,9 @@
 							"name": "join1"
 						},
 						{
+							"name": "AlterRow1"
+						},
+						{
 							"name": "select1"
 						}
 					],
@@ -1356,11 +1359,10 @@
 						"     matchType:'exact',",
 						"     ignoreSpaces: false,",
 						"     broadcast: 'auto')~> join1",
-						"join1 select(mapColumn(",
+						"join1 alterRow(upsertIf(true())) ~> AlterRow1",
+						"AlterRow1 select(mapColumn(",
 						"          Id,",
 						"          Name,",
-						"          dept_id = employeSource@dept_id,",
-						"          dept_Id = deptSource@dept_Id,",
 						"          department_name",
 						"     ),",
 						"     skipDuplicateMapInputs: true,",
@@ -1374,8 +1376,9 @@
 						"     ),",
 						"     deletable:false,",
 						"     insertable:true,",
-						"     updateable:false,",
-						"     upsertable:false,",
+						"     updateable:true,",
+						"     upsertable:true,",
+						"     keys:['Id','Name','Department_name'],",
 						"     format: 'table',",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",

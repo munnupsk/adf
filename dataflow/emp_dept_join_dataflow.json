@@ -1,0 +1,94 @@
+{
+	"name": "emp_dept_join_dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlEmployee",
+						"type": "DatasetReference"
+					},
+					"name": "employeSource"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlDeptTable",
+						"type": "DatasetReference"
+					},
+					"name": "deptSource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlEmpDeptTable",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "join1"
+				},
+				{
+					"name": "select1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Id as integer,",
+				"          Name as string,",
+				"          dept_id as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> employeSource",
+				"source(output(",
+				"          dept_Id as integer,",
+				"          department_name as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> deptSource",
+				"employeSource, deptSource join(employeSource@dept_id == deptSource@dept_Id,",
+				"     joinType:'left',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1",
+				"join1 select(mapColumn(",
+				"          Id,",
+				"          Name,",
+				"          dept_id = employeSource@dept_id,",
+				"          dept_Id = deptSource@dept_Id,",
+				"          department_name",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Id as integer,",
+				"          Name as string,",
+				"          Department_name as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          Id,",
+				"          Name,",
+				"          Department_name = department_name",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}

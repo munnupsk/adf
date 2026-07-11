@@ -1,0 +1,26 @@
+{
+	"name": "AzureSqlDeptTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "dept_Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "department_name",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Department"
+		}
+	}
+}

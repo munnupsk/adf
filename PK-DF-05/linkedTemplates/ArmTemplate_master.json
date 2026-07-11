@@ -117,9 +117,6 @@
 					"sa_csv_accountKey": {
 						"value": "[parameters('sa_csv_accountKey')]"
 					},
-					"MySql1_password": {
-						"value": "[parameters('MySql1_password')]"
-					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
@@ -143,15 +140,6 @@
 					},
 					"sa_csv_properties_typeProperties_url": {
 						"value": "[parameters('sa_csv_properties_typeProperties_url')]"
-					},
-					"MySql1_properties_typeProperties_server": {
-						"value": "[parameters('MySql1_properties_typeProperties_server')]"
-					},
-					"MySql1_properties_typeProperties_database": {
-						"value": "[parameters('MySql1_properties_typeProperties_database')]"
-					},
-					"MySql1_properties_typeProperties_username": {
-						"value": "[parameters('MySql1_properties_typeProperties_username')]"
 					}
 				}
 			},
@@ -170,6 +158,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"MySql1_password": {
+						"value": "[parameters('MySql1_password')]"
+					},
+					"MySql1_properties_typeProperties_server": {
+						"value": "[parameters('MySql1_properties_typeProperties_server')]"
+					},
+					"MySql1_properties_typeProperties_database": {
+						"value": "[parameters('MySql1_properties_typeProperties_database')]"
+					},
+					"MySql1_properties_typeProperties_username": {
+						"value": "[parameters('MySql1_properties_typeProperties_username')]"
 					}
 				}
 			},

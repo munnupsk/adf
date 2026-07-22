@@ -222,7 +222,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Notebook1",
+						"name": "DB Notebook",
 						"type": "DatabricksNotebook",
 						"dependsOn": [],
 						"policy": {
@@ -234,7 +234,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Users/prasannakumarpsk5555@gmail.com/test"
+							"notebookPath": "/Users/prasannakumarpsk5555@gmail.com/test_df"
 						},
 						"linkedServiceName": {
 							"referenceName": "AzureDatabricks2",

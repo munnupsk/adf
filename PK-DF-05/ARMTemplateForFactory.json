@@ -967,13 +967,13 @@
 					"domain": "https://adb-7405611813982150.10.azuredatabricks.net",
 					"authentication": "MSI",
 					"workspaceResourceId": "/subscriptions/990cd719-5cbc-422f-be31-279e93e4578f/resourceGroups/PK_TEST/providers/Microsoft.Databricks/workspaces/PK-DB-TEST",
-					"newClusterNodeType": "Standard_E4ads_v7",
-					"newClusterNumOfWorker": "1",
+					"newClusterNodeType": "Standard_DC8as_v5",
+					"newClusterNumOfWorker": "1:2",
 					"newClusterSparkEnvVars": {
 						"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
 					},
 					"newClusterVersion": "17.3.x-scala2.13",
-					"clusterOption": "Fixed",
+					"clusterOption": "Autoscaling",
 					"newClusterInitScripts": []
 				}
 			},

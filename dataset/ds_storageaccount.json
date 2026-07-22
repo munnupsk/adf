@@ -1,0 +1,20 @@
+{
+	"name": "ds_storageaccount",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "csv",
+				"fileSystem": "csv-files"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

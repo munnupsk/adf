@@ -8,9 +8,6 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
-		"AzureDatabricks2_accessToken": {
-			"value": ""
-		},
 		"AzureDatabricks3_accessToken": {
 			"value": ""
 		},

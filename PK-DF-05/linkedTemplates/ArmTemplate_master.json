@@ -11,10 +11,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
-		"AzureDatabricks2_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks2'"
-		},
 		"AzureDatabricks3_accessToken": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks3'"
@@ -104,9 +100,6 @@
 					},
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
-					},
-					"AzureDatabricks2_accessToken": {
-						"value": "[parameters('AzureDatabricks2_accessToken')]"
 					},
 					"AzureDatabricks3_accessToken": {
 						"value": "[parameters('AzureDatabricks3_accessToken')]"

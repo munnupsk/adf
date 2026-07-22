@@ -628,31 +628,28 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/sqlStudentAvg')]",
+			"name": "[concat(parameters('factoryName'), '/ds_storageaccount')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase",
+					"referenceName": "AzureDataLakeStorage1",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "age_avg",
-						"type": "decimal",
-						"precision": 2,
-						"scale": 2
-					}
-				],
+				"type": "Parquet",
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "studentAgeAvg"
-				}
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "csv",
+						"fileSystem": "csv-files"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
 			]
 		}
 	]
